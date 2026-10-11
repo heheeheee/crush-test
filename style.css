@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Noto Sans KR", sans-serif;
+    background: linear-gradient(135deg, #fff1f5, #fce8f0);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+section {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* 시작 화면 */
+
+#start-screen {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.icon {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #e84d7a;
+}
+
+.subtitle {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+
+/* 버튼 */
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#start-screen button,
+#result-screen > button {
+    background: #e84d7a;
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+
+/* 질문 화면 */
+
+.progress-area {
+    margin-bottom: 30px;
+}
+
+.progress-text {
+    text-align: right;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f1dce3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background: #e84d7a;
+    transition: width 0.3s ease;
+}
+
+.question-box h2 {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+#answers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.answer-button {
+    background: #fff7f9;
+    color: #444;
+    border: 2px solid #f2dbe2;
+    text-align: left;
+}
+
+.answer-button:hover {
+    background: #fff0f4;
+    transform: none;
+}
+
+.answer-button.selected {
+    background: #e84d7a;
+    color: white;
+    border-color: #e84d7a;
+}
+
+#next-button {
+    margin-top: 25px;
+    background: #333;
+    color: white;
+}
+
+#next-button:disabled {
+    background: #ddd;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* 결과 화면 */
+
+#result-screen {
+    text-align: center;
+}
+
+.result-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.result-label {
+    color: #888;
+    font-size: 15px;
+}
+
+.score {
+    font-size: 64px;
+    font-weight: 800;
+    color: #e84d7a;
+    margin: 5px 0 10px;
+}
+
+.score-percent {
+    font-size: 28px;
+}
+
+#result-title {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+#result-description {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+
+/* 통계 */
+
+.stats {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.stat {
+    margin-bottom: 20px;
+}
+
+.stat-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.stat-top strong {
+    color: #e84d7a;
+}
+
+.stat-bar {
+    height: 10px;
+    background: #f1e3e7;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stat-bar div {
+    height: 100%;
+    width: 0%;
+    background: #e84d7a;
+    border-radius: 10px;
+    transition: width 0.7s ease;
+}
+
+
+/* 분석 박스 */
+
+.analysis-box,
+.advice-box,
+.warning-box {
+    text-align: left;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 18px;
+}
+
+.analysis-box {
+    background: #fff5f8;
+}
+
+.advice-box {
+    background: #f7f5ff;
+}
+
+.warning-box {
+    background: #fff9ed;
+}
+
+.analysis-box h3,
+.advice-box h3,
+.warning-box h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.analysis-box p,
+.advice-box p,
+.warning-box p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* 모바일 */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding: 15px;
+    }
+
+    section {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
+    #start-screen {
+        margin-top: 40px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .question-box h2 {
+        font-size: 19px;
+    }
+
+    .score {
+        font-size: 55px;
+    }
+}
